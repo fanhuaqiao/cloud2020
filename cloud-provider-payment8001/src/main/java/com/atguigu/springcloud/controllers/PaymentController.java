@@ -3,14 +3,9 @@ package com.atguigu.springcloud.controllers;
 
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
-import com.atguigu.springcloud.services.PaymentService;
 import com.atguigu.springcloud.services.PaymentServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PaymentController {
@@ -20,7 +15,7 @@ public class PaymentController {
     private PaymentServiceImp paymentServiceImp;
 
     @PostMapping("/payment/create")
-    public CommonResult createPayment(Payment payment){
+    public CommonResult createPayment(@RequestBody Payment payment){
         int i = paymentServiceImp.create(payment);
         if (i>0) {
             return new CommonResult(200,"新增支付成功",i);
