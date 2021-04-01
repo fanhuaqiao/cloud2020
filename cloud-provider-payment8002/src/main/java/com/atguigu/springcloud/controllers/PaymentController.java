@@ -1,6 +1,5 @@
 package com.atguigu.springcloud.controllers;
 
-
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.services.PaymentServiceImp;
