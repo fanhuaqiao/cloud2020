@@ -20,7 +20,7 @@ public class PaymentController {
 
     @GetMapping("/hystrix/payment/getTimeout/{id}")
     public String getPaymentTimeout(@PathVariable("id") Long id){
-        System.out.println("我到8001controller啦");
+        System.out.println("我到8002controller啦");
         return paymentServiceImpl.paymentTimeout(id);
     }
 }

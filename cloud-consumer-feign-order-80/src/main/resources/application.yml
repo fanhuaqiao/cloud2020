@@ -5,9 +5,14 @@ eureka:
   instance:
     hostname: cloud-consumer-feign-order-80
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+    fetch-registry: true
+
+feign:
+  hystrix:
+    enabled: true
 
 spring:
   application:
