@@ -23,4 +23,10 @@ public class PaymentController {
         System.out.println("我到8001controller啦");
         return paymentServiceImpl.paymentTimeout(id);
     }
+
+    @GetMapping("/hystrix/payment/circuitBreaker/{id}")
+    public String getCircuitBreaker(@PathVariable("id") Long id){
+        System.out.println("我到circuitBreaker controller啦");
+        return paymentServiceImpl.testHystrix(id);
+    }
 }
